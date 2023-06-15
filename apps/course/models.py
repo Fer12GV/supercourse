@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 from apps.course.choices import GENDER_CHOICES
 from apps.accounts.choices import IDENTIFICATION_CHOICES
@@ -82,8 +83,15 @@ class Tuition(models.Model):
     fk_student = models.ForeignKey(Student, blank=True, null=True, on_delete=models.CASCADE)
     fk_course = models.ForeignKey(Course, blank=True, null=True, on_delete=models.CASCADE)
 
+    def clean(self):
+        if self.start_date and self.end_date and self.start_date >= self.end_date:
+            raise ValidationError("The end date must be greater than start date.")
+
+    class Meta:
+        unique_together = ('fk_student', 'fk_course')
+
     def __str__(self):
-        return f"{self.code} {self.fk_student.name} {self.fk_course.name}"
+        return f"{self.code}"
 
 
 class Qualification(models.Model):

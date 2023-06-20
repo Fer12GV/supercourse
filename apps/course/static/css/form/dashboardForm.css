@@ -1,0 +1,41 @@
+button.btn-dashboard {
+  background-color: #dc7a39;
+  color: white;
+  border-radius: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 23px;
+  border: none;
+  padding: 10px;
+}
+
+button.btn-dashboard:disabled {
+  background-color: #dddddd;
+  color: #c5c5c5;
+}
+
+input.input-dashboard,
+select.select-dashboard {
+  height: 36px;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  border: 2px solid #00AFDF;
+  padding: 5px 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+input.input-dashboard:disabled,
+select.select-dashboard:disabled {
+  border-color: #c1c1c1;
+}
+
+/* 
+*
+*/
+
+.option_block {
+  box-sizing: border-box;
+  padding: 7px;
+}

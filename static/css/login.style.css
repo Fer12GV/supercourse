@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/PoppinsFont/Poppins-Regular.ttf') format('truetype');
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0082FF;
+
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+header {
+  background-color: #fff;
+  height: 68px;
+  display: flex;
+  align-items: flex-end;
+}
+
+header .logo {
+  margin-left: 138px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100% - 68px);
+  background-image: url('/static/img/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.wellcome-container {
+  width: 620px;
+  height: 609px;
+  margin-left: 75px;
+}
+
+.wellcome-container .title-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.wellcome-container .title-container h4,
+.wellcome-container .title-container h1 {
+  font-family: 'Poppins', serif;
+  font-style: normal;
+  margin: 0;
+}
+
+.wellcome-container .title-container h4 {
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 74px;
+  color: white;
+}
+
+.wellcome-container .title-container h1 {
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 90px;
+  color: #dc7a39;
+}
+
+.wellcome-container .title-container h1 span {
+  color: white;
+}
+
+.wellcome-container p {
+  font-family: 'Poppins', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5px;
+  line-height: 26px;
+  color: white;
+  margin: 51px 0 0 0;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1094px;
+  height: 100%;
+  position: relative;
+  border-left: 1px dashed #9747FF;
+}
+
+.login-form-container .textingChatbot {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  max-width: 100%;
+  height: 920px;
+  height: fit-content;
+}
+
+.login-form-container .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 651px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+
+}
+
+.login-form h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 48px;
+  color: white;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  height: 53px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #00FFFF;
+  background: linear-gradient(0deg, rgba(0, 130, 255, 0.4), rgba(0, 130, 255, 0.4));
+  border-radius: 14px;
+  margin-bottom: 23px;
+  background-color: transparent;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5px;
+  line-height: 26px;
+  text-align: center;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 130, 255, 0.4) inset;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s, font-size 5000s ease-in-out 0s;
+  color: white !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login-form .btn-remember {
+  height: 21px;
+  width: 210px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 23px;
+}
+
+.login-form .btn-login {
+  width: 220px;
+  height: 53px;
+  background-color: #dc7a39;
+  color: white;
+  border-radius: 14px;
+  font-size: 25px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 23px;
+  border: none;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  border: 1px solid #00FFFF;
+  background: linear-gradient(0deg, #dc7a39, rgba(0, 130, 255, 0.4));
+  background-color: #dc7a39eb;
+}
+
+.login-form h2 {
+  color: #dc7a39;
+}
+
+@media(max-width: 1600px) {
+  .wellcome-container {
+    width: 33%;
+  }
+
+  .login-form-container {
+    width: 57%;
+  }
+  .login-form-container .textingChatbot{
+    max-width: 651px;
+  }
+
+  .wellcome-container .title-container {
+    height: 250px;
+  }
+
+  .wellcome-container .title-container h1 {
+    font-size: 106px;
+    line-height: 75px;
+  }
+
+  .wellcome-container .title-container h4 {
+    font-size: 55px;
+    line-height: 61.6px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .wellcome-container {
+    margin-left: 46.875px;
+    width: 387.5px;
+    height: 380.625px;
+  }
+
+  .wellcome-container .title-container {
+    height: 187.5px;
+  }
+
+  .wellcome-container .title-container h1 {
+    font-size: 80px;
+    line-height: 56.25px;
+  }
+
+  .wellcome-container .title-container h4 {
+    font-size: 41.25px;
+    line-height: 46.25px;
+  }
+
+  .wellcome-container p {
+    margin: 31.875px 0 0 0;
+    font-size: 13px;
+    line-height: 16.25px;
+  }
+
+  .login-form-container {
+    width: 683.75px;
+  }
+
+  .login-form-container .textingChatbot {
+    width: 671.25px;
+  }
+
+  .login-form-container .login-form {
+    width: 406.875px;
+    height: 100%;
+    max-height: 739.5px;
+  }
+
+  .login-form h2 {
+    font-size: 30px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    height: 33.125px;
+  }
+
+  .login-form .btn-login {
+    height: 33.125px;
+    font-size: 15.625px;
+  }
+}
+
+@media(max-width: 1200px) {
+  body {
+    overflow: auto;
+  }
+  header .logo{
+    margin-left: 30px;
+  }
+  main {
+    flex-direction: column-reverse;
+    overflow: auto;
+    padding-bottom: 120px;
+    justify-content: center;
+  }
+
+  .login-form-container {
+    width: 60%;
+    border-right: 1px dashed #9747FF;
+    height: auto;
+  }
+
+  .login-form-container .textingChatbot {
+    display: none;
+  }
+
+  .wellcome-container .title-container {
+    height: auto;
+    text-align: center;
+  }
+
+  .wellcome-container .title-container h1 {
+    font-size: 30px;
+    line-height: 26.25px;
+  }
+
+  .wellcome-container .title-container h4 {
+    font-size: 20px;
+    line-height: 26.25px;
+  }
+
+  .wellcome-container {
+    padding: 20px;
+    margin: 0;
+    width: 60%;
+    border-left: 1px dashed #9747FF;
+    border-right: 1px dashed #9747FF;
+  }
+
+  .wellcome-container p {
+    text-align: justify;
+  }
+}
+
+@media(max-width: 750px) {
+  main {
+    height: auto;
+  }
+  .login-form-container {
+    width: 90%;
+  }
+
+  .wellcome-container {
+    width: 90%;
+  }
+}
+
+
+@media (max-height: 735px) {
+  .login-form-container .textingChatbot {
+    width: 567px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"],
+  .login-form .btn-login,
+  .login-form .btn-remember {
+    margin-bottom: 14px;
+  }
+}

@@ -1,0 +1,62 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>SuperCourse</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menuSidebar/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form/dashboardForm.css' %}">
+    {% block styles %}
+    {% endblock %}
+
+    <script src="{% static 'js/menuSidebar/sidebar.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body class="dashboard">
+
+    <div class="sidebar">
+        <div class="logoContainer">
+            <!-- <button class="toggle-btn" onclick="toggleSidebar()">☰</button> -->
+            <img class="logo" alt="supercourse" width="30%" height="90%" src="{% static 'img/logoSuperCourse.png' %}" />
+
+        </div>
+        <ul>
+            <li {% if request.path == '/importer/' %}class="group active"{% endif %} class="group">
+                <a href="/importer">General Importer</a>
+            </li>
+            <li class="group">
+                <div class="subtitle toggle" onclick="toggleMenu(this)">Single Importers</div>
+                <ul>
+                    <li {% if request.path == '/teacher/' %}class="active"{% endif %}><a href="/teacher">Teacher</a></li>
+                    <li {% if request.path == '/student/' %}class="active"{% endif %}><a href="/student">Student</a></li>
+                    <li {% if request.path == '/tuition/' %}class="active"{% endif %}><a href="/tuition">Tuition</a></li>
+                    <li {% if request.path == '/qualification/' %}class="active"{% endif %}><a href="/qualification">Qualification</a></li>
+                </ul>
+            </li>
+            <li class="group">
+                <div class="subtitle">
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn-dashboard" type="submit">Log out</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <!-- Contenido principal de la página -->
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block endScript %}
+    {% endblock %}
+</body>
+
+</html>

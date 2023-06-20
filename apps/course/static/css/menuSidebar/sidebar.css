@@ -1,0 +1,131 @@
+/* Estilos para el sidebar */
+.sidebar {
+  background-color: #1a0d01;
+  color: #fff;
+  width: 250px;
+  min-width: 250px;
+  height: 100%;
+  /* position: fixed; */
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in;
+  overflow-x: hidden;
+  box-shadow: 2px 0px 4px 1px #a5a2a2;
+}
+
+.sidebar .logoContainer {
+  background-color: white;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 68px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  color: #7d84ab;
+  text-decoration: none;
+
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .subtitle {
+  padding: 6px 8px 6px 16px;
+}
+
+.subtitle.toggle{
+  cursor: pointer;
+}
+
+.subtitle + ul {
+  display: none;
+}
+
+.subtitle.open + ul {
+  display: block;
+}
+.sidebar ul li a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.sidebar ul li.active, .sidebar ul li.active a {
+  background-color: #dc7a39;
+  color: black;
+}
+
+.sidebar ul li.group {
+  border-bottom: 1px solid #182028;
+}
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+}
+
+/* Estilos para el contenido principal */
+.content {
+  margin-left: 0;
+  padding: 16px;
+  width: 100%;
+  overflow: auto;
+}
+
+.toggle-btn  {
+  display: none;
+}
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-width: 250px;
+    position: fixed;
+    left: 0;
+  }
+
+  .sidebar.active {
+    left: -100%;
+  }
+  .sidebar ul li a {
+    height: auto;
+    min-height: 45px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .toggle-btn {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 9999;
+  }
+}

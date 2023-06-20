@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/static/font/PoppinsFont/Poppins-Regular.ttf') format('truetype');
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+body.dashboard {
+  display: flex;
+}
+
+/* 
+/* Estilos para el contenido principal */
+.content {
+  margin-left: 200px;
+  padding: 20px;
+  width: 100%;
+}

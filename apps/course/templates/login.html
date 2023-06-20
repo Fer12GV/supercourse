@@ -1,0 +1,61 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/login.style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/notification/notification.css' %}">
+  <title>Login Form</title>
+</head>
+
+<body>
+  <header>
+    <img class="logo" alt="supercourse" width="30%" height="90%" src="{% static 'img/logoSuperCourse.png' %}" />
+  </header>
+  <main>
+    <div class="wellcome-container">
+      <div class="title-container">
+        <h4>Wellcome to</h4>
+        <h1>S<span>C</span></h1>
+        <h4>Manager</h4>
+      </div>
+      <p>
+          Super Course is a web application to manage educational processes. 
+          An authenticated user will be able to import XLS and XLSX files 
+          with information about the courses, their teachers, students 
+          and their grades.
+      </p>
+    </div>
+    <div class="login-form-container">
+      <img class="textingChatbot" src="{% static 'img/ImgLogin.png' %}" alt="chatbot texting" />
+      <form id="login-form" class="login-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h2>Login</h2>
+        <input type="text" id="username" name="username" required>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Sing In" class="btn-login">
+      </form>
+    </div>
+    {% if show_notification %}
+    <div id="notificationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+   {% endif %}
+  </main>
+<script>
+  window.onload = function() {
+    {% if show_notification %}
+      modal.style.display = "flex";
+    {% endif %}
+  };
+</script>
+<script src="{% static 'js/notification/notification.js' %}"></script>
+</body>
+
+</html>

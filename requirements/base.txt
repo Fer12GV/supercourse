@@ -19,3 +19,14 @@ text_unidecode==1.3
 
 # pip3 install psycopg2-binary
 psycopg2_binary==2.9.6
+
+# pip3 install djangorestframework
+djangorestframework==3.14.0
+pytz==2023.3
+
+# pip3 install djangorestframework-simplejwt
+djangorestframework_simplejwt==5.2.2
+PyJWT==2.7.0
+
+# python -m pip install django-cors-headers
+django_cors_headers==4.1.0
